@@ -36,7 +36,6 @@ COPY .env.example .env
 # Generate application key
 RUN php artisan key:generate
 
-...
 # Do NOT run key:generate here
 EXPOSE 8000
 
