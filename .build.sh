@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
 
-# Download Composer
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-
 # Install Composer
-php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
 
-# Remove setup script
-php -r "unlink('composer-setup.php');"
-
-# Run composer install
+# Run Composer install
 composer install
