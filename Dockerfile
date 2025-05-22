@@ -31,9 +31,16 @@ COPY . .
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
+COPY .env.example .env
+
 # Generate application key
 RUN php artisan key:generate
 
-# Expose port and run server
+...
+# Do NOT run key:generate here
 EXPOSE 8000
-CMD php artisan serve --host=0.0.0.0 --port=8000
+
+CMD ["sh", "-c", "cp .env.example .env && php artisan key:generate && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8000"]
+
+
+
