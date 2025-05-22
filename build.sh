@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Download Composer
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
