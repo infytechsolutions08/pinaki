@@ -2,4 +2,4 @@ services:
   - type: web
     name: my-php-app
     buildCommand: ./build.sh
-    startCommand: php -S 0.0.0.0:10000 -t pinaki
+    startCommand: php -S 0.0.0.0:10000 -t public\index.php
